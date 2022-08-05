@@ -3,7 +3,7 @@ const fs = require("fs");
 const Engineer = require("./lib/engineer");
 const Manager = require("./lib/manager");
 const Intern = require("./lib/intern");
-const output = path.join("./", "myTeam.html")
+const output = ("./", "myTeam.html")
 const createTeam = require ("./src/teamTemplate")
 
 
@@ -38,7 +38,8 @@ function runApplication() {
     
     //prompting for user inputs regarding the manager and validating if the responses are legitimate
     function addManager() {
-        inquirer.prompt([{
+        inquirer.prompt([
+            {
             type: "input",
             name: "managerName",
             message: "What is the manager's name?",
@@ -49,9 +50,9 @@ function runApplication() {
                     console.log("Please enter the manager's name.");
                     return false;
                 }
-            },
-            
-            type: "number",
+            }
+        },
+           { type: "number",
             name: "managerID",
             message: "What is the manager's employee ID number?",
         validate: idInput => {
@@ -61,8 +62,9 @@ function runApplication() {
                 console.log("Employee ID should be a number.");
                 return false;
             }
-        },
-        
+        }
+    },
+       {
         type: "input",
         name: "managerEmail",
         message: "What is the manager's email address?",
@@ -73,8 +75,9 @@ function runApplication() {
                 console.log("Please enter a valid email address.");
                 return false;
             }
-        },
-        
+        }
+    },
+        {
         type: "number",
         name: "officeNumber",
         message: "What is the manager's office number.",
@@ -85,8 +88,9 @@ function runApplication() {
                 console.log("Response should be a number.");
                 return false;
             }
-        },
+        }
         
+    
         
        //push the responses about the manager to the array, then return back to the questions. 
     }]).then(answers => {
