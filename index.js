@@ -80,7 +80,7 @@ function runApplication() {
         {
         type: "number",
         name: "officeNumber",
-        message: "What is the manager's office number.",
+        message: "What is the manager's office number?",
         validate: officeNumberInput => {
             if (typeof officeNumberInput == "number") {
                 return true;
